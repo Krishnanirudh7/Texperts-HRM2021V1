@@ -1,0 +1,55 @@
+<ul class="navbar-nav sidebar sidebar-light accordion" id="accordionExample">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center">
+        <div class="sidebar-brand-icon ">
+            <img src="assets/logo.png" style="height: 63px;
+            width: 109px;
+            margin-right: 74px;"/>
+        </div>
+    </a>
+
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link pointer-hand"  data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+           aria-expanded="false" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Marketer</span>
+        </a>
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white pointer-hand collapse-inner rounded">
+                <a class="nav-item collapse-item pointer-hand" routerLinkActive="active"  [routerLink]="['/home/sales/marketer/scheduler']"><i class="fa fa-calendar fa-lg mr-2" aria-hidden="true"></i>Scheduler & Hotlist</a>
+                <a class="nav-item collapse-item  pointer-hand" routerLinkActive="active" [routerLink]="['/home/sales/marketer/Interviews']"><i class="fa fa-list-alt fa-lg mr-2" aria-hidden="true"></i>Interviews List</a>
+                <a class="nav-item collapse-item  pointer-hand" routerLinkActive="active" [routerLink]="['/home/sales/marketer/overview']"><i class="fa fa-bar-chart fa-lg mr-2" aria-hidden="true"></i>Summary Statistics</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item  pointer-hand" routerLinkActive="active">
+        <a class="nav-link collapsed  pointer-hand" data-bs-dismiss="#collapse"  routerLinkActive="active" [routerLink]="['/home/sales/consultants']" >
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Consultants</span>
+        </a> 
+    </li>
+    <li class="nav-item  pointer-hand" routerLinkActive="active">
+        <a class="nav-link collapsed" routerLinkActive="active" >
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Talent Search</span>
+        </a> 
+    </li>
+    <li class="nav-item  pointer-hand" routerLinkActive="active">
+        <a class="nav-link collapsed" >
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Bulk Mail</span>
+        </a> 
+    </li>
+    <li class="nav-item  pointer-hand" routerLinkActive="active">
+        <a class="nav-link collapsed" >
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Job Posting</span>
+        </a> 
+    </li>
+
+
+</ul>

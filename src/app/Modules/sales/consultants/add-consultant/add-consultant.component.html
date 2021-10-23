@@ -1,0 +1,240 @@
+<div class="container-fluid">
+   
+    <div class="card mb-2">
+            <div class="d-flex align-items-center justify-content-between">
+                <h6 class=" h5 bg-white"><i class="fa fa-user-plus text-success" aria-hidden="true"></i> Add
+                    Consultant</h6>
+                <div class="">
+        
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-white">
+                            <li class="breadcrumb-item pointer-hand"><a [routerLink]="['/home/sales/consultants']">< Back</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        <div class="">
+            <div class="">
+                <div class="modal-content">
+                    <form [formGroup]="newConsultantForm" autocomplete="off" (ngSubmit)="ValidateandAddNewConsultant()">
+                        <div class="modal-body">
+                            <!-- <h6 class="mb-3">Personal Information</h6> -->
+                            <div data-bs-toggle="collapse" data-bs-target="#prd_general"
+                                class="card-header accordianToggle text-white mb-3 pointer-hand"
+                                (click)="generalCollapsed=!generalCollapsed;"><i class="fa"
+                                    [ngClass]="{'fa-caret-down':!generalCollapsed, 'fa-caret-up':generalCollapsed}"></i>&nbsp;&nbsp;Personal
+                                Information<i class="fa fa-user fa-lg text-success ml-2" aria-hidden="true"></i>
+                            </div>
+                            <div id="prd_general" class="collapse show">
+                                <div class="row m-2">
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="form-label">First Name<span class="ml-2 required">*</span></label>
+                                            <input type="text" formControlName="FirstName" autocomplete="off"
+                                                class="form-control" id="FirstName" placeholder="First name"
+                                                maxlength="40" />
+                                            <label
+                                                *ngIf="newConsultantForm.get('FirstName').touched && newConsultantForm.get('FirstName').errors?.required"
+                                                class="text-error m-0 p-0 d-block">First Name is required</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Middle Name</label>
+                                            <input type="text" formControlName="MiddleName" autocomplete="off"
+                                                class="form-control" id="MiddleName" placeholder="Middle name"
+                                                maxlength="40" />
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Last Name<span class="ml-2 required">*</span></label>
+                                            <input type="text" formControlName="LastName" autocomplete="off"
+                                                class="form-control" id="LastName" placeholder="Last name"
+                                                maxlength="40" />
+                                            <label
+                                                *ngIf="newConsultantForm.get('LastName').touched && newConsultantForm.get('LastName').errors?.required"
+                                                class="text-error m-0 p-0 d-block">Last Name is required</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Email<span class="ml-2 required">*</span></label>
+                                            <input type="text" formControlName="Email" autocomplete="off"
+                                                class="form-control" id="Email" placeholder="Email" maxlength="40" />
+                                            <label
+                                                *ngIf="newConsultantForm.get('Email').touched && newConsultantForm.get('Email').errors?.required"
+                                                class="text-error m-0 p-0 d-block">Email is required</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Phone Number<span
+                                                    class="ml-2 required">*</span></label>
+                                            <input type="text" formControlName="PhoneNumber" autocomplete="off"
+                                                class="form-control" id="PhoneNumber" placeholder="Phone number"
+                                                maxlength="40" />
+                                            <label
+                                                *ngIf="newConsultantForm.get('PhoneNumber').touched && newConsultantForm.get('PhoneNumber').errors?.required"
+                                                class="text-error m-0 p-0 d-block">Phone Number is required</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Alternate Phone Number</label>
+                                        <input type="text" formControlName="AlternativeNumber" autocomplete="off"
+                                            class="form-control" id="AlternativeNumber"
+                                            placeholder="Alternative phone number" maxlength="40" />
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Skype Id<span class="ml-2 required">*</span></label>
+                                            <input type="text" formControlName="SkypeId" autocomplete="off"
+                                                class="form-control" id="SkypeId" placeholder="Skype Id"
+                                                maxlength="40" />
+                                            <label
+                                                *ngIf="newConsultantForm.get('SkypeId').touched && newConsultantForm.get('SkypeId').errors?.required"
+                                                class="text-error m-0 p-0 d-block">Skype Id is required</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="form-label">D.O.B(Date of Birth)<span
+                                                    class="ml-2 required">*</span></label>
+                                            <input type="text" formControlName="DOB" autocomplete="off"
+                                                class="form-control" id="DOB" placeholder="DOB" maxlength="40" />
+                                            <label
+                                                *ngIf="newConsultantForm.get('DOB').touched && newConsultantForm.get('DOB').errors?.required"
+                                                class="text-error m-0 p-0 d-block">DOB is required</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="form-label">SSN(Social Security Number)<span
+                                                    class="ml-2 required">*</span></label>
+                                            <input type="text" formControlName="SSN" autocomplete="off"
+                                                class="form-control" id="SSN" placeholder="SSN" maxlength="40" />
+                                            <label
+                                                *ngIf="newConsultantForm.get('SSN').touched && newConsultantForm.get('SSN').errors?.required"
+                                                class="text-error m-0 p-0 d-block">SSN is required</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Passport Number</label>
+                                        <input type="text" formControlName="PassportNumber" autocomplete="off"
+                                            class="form-control" id="PassportNumber" placeholder="PassportNumber"
+                                            maxlength="40" />
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Address<span class="ml-2 required">*</span></label>
+                                            <input type="text" formControlName="Address" autocomplete="off"
+                                                class="form-control" id="Address" placeholder="Address"
+                                                maxlength="40" />
+                                            <label
+                                                *ngIf="newConsultantForm.get('Address').touched && newConsultantForm.get('Address').errors?.required"
+                                                class="text-error m-0 p-0 d-block">Address is required</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="form-label">City<span class="ml-2 required">*</span></label>
+                                            <input type="text" formControlName="City" autocomplete="off"
+                                                class="form-control" id="City" placeholder="City" maxlength="40" />
+                                            <label
+                                                *ngIf="newConsultantForm.get('City').touched && newConsultantForm.get('City').errors?.required"
+                                                class="text-error m-0 p-0 d-block">City is required</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label class="form-label">State<span class="ml-2 required">*</span></label>
+                                            <input type="text" formControlName="State" autocomplete="off"
+                                                class="form-control" id="State" placeholder="State" maxlength="40" />
+                                            <label
+                                                *ngIf="newConsultantForm.get('State').touched && newConsultantForm.get('State').errors?.required"
+                                                class="text-error m-0 p-0 d-block">State is required</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Zip Code<span class="ml-2 required">*</span></label>
+                                        <input type="text" formControlName="Zipcode" autocomplete="off"
+                                            class="form-control" id="Zipcode" placeholder="Zipcode" maxlength="40" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <h6 class="mb-3" >Educational & Professional Information</h6> -->
+                            <div data-bs-toggle="collapse" data-bs-target="#prd_edu"
+                                class="card-header accordianToggle text-white mb-3 pointer-hand"
+                                (click)="generalCollapsed1=!generalCollapsed1;"><i class="fa"
+                                    [ngClass]="{'fa-caret-down':!generalCollapsed1, 'fa-caret-up':generalCollapsed1}"></i>&nbsp;&nbsp;Educational
+                                & Professional Information <i class="fa fa-graduation-cap fa-lg ml-2"
+                                    aria-hidden="true"></i>
+                            </div>
+                            <div id="prd_edu" class="collapse show">
+                                <div class="row m-2">
+                                    <div class="col-4">
+                                        <label class="form-label">Skill Set<span class="ml-2 required">*</span></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Minimum Pay Rate<span
+                                                class="ml-2 required">*</span></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Education Qualification<span
+                                                class="ml-2 required">*</span></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label class="form-label">Residing in GH<span class="ml-2 required">*</span></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">GH Move in Date<span class="ml-2 required">*</span></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Visa Status<span class="ml-2 required">*</span></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Experienced User<span
+                                                class="ml-2 required">*</span></label>
+                                        <p-selectButton [options]="stateOptions" formControlName="Experience"
+                                            optionLabel="label" optionValue="value"></p-selectButton>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Prefer to Relocate<span
+                                                class="ml-2 required">*</span></label>
+                                        <p-selectButton [options]="stateOptions" formControlName="PreferRelocate"
+                                            optionLabel="label" optionValue="value"></p-selectButton>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label class="form-label">Visa Entry Date<span class="ml-2 required">*</span></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label">Recruited By<span
+                                                class="required font-12">*</span></label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="text-left  mr-5 text-muted">Fields marked with<span class="ml-2 required">*</span>&nbsp;are Mandatory</div>
+                            <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" type="submit" class="btn btn-success">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

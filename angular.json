@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TexpertsHRM-Phase1": {
+    "Texperts-hrm2021-Phase1": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/TexpertsHRM-Phase1",
+            "outputPath": "dist/Texperts-hrm2021-Phase1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,9 +34,23 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/primeicons/primeicons.css",
+             "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/jquery-slimscroll/jquery.slimscroll.min.js",
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
+              "node_modules/inputmask/dist/jquery.inputmask.min.js",
+              "node_modules/underscore/underscore-min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -72,10 +89,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "TexpertsHRM-Phase1:build:production"
+              "browserTarget": "Texperts-hrm2021-Phase1:build:production"
             },
             "development": {
-              "browserTarget": "TexpertsHRM-Phase1:build:development"
+              "browserTarget": "Texperts-hrm2021-Phase1:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +100,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TexpertsHRM-Phase1:build"
+            "browserTarget": "Texperts-hrm2021-Phase1:build"
           }
         },
         "test": {
@@ -101,11 +118,14 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "TexpertsHRM-Phase1"
+  "defaultProject": "Texperts-hrm2021-Phase1"
 }

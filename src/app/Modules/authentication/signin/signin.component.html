@@ -1,0 +1,49 @@
+<div class="container login">
+  <div class="row mt-75">
+    <div class="col-sm-6 d-none d-sm-block">
+      <div class="text-center">
+        <img src="assets/login-img.jpg" class="img-fluid" style="max-height: 550px;" />
+      </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <form [formGroup]="loginForm" (ngSubmit)="login();">
+        <div class="login-padd">
+          <div class="text-center">
+            <img src="assets/logo.png" class="img-fluid" style="  width: 154px;
+            height: 85px;" />
+            <h3 class="my-28 fw-bold font-30">Login</h3>
+          </div>
+          <div class="mb-26">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="UserName" id="username"
+              placeholder="name@example.com">
+          </div>
+          <div class="mb-26">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="Password" id="password" placeholder="Password">
+          </div>
+          <div class="d-flex justify-content-between mb-23">
+            <div class="form-check m-0">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label fw-600 font-13" for="defaultCheck1">
+                Remember me
+              </label>
+            </div>
+            <p class="fw-600 font-13 m-0" style=" color: #40BF96">
+              Forgot Password?
+            </p>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-success rounded-pill font-23 w-100" type="submit" [disabled]="loginForm.invalid || validatingLogin">
+              <span *ngIf="validatingLogin"><i class="fa fa-spinner fa-pulse"></i></span>
+              <span *ngIf="!validatingLogin">Login</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="notification-toast ">
+  <p-toast position="top-right"></p-toast>
+</div>

@@ -1,0 +1,25 @@
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    border-color: rgb(234 236 244 / 0%) rgb(234 236 244 / 0%) #159656 !important;
+    border-width: 3px
+}
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+    border-color: rgb(234 236 244 / 0%) rgb(234 236 244 / 0%) #159656 !important;
+    border-width: 3px
+}
+
+.nav-tabs {
+    border-bottom: 3px solid rgb(151 151 151 / 15%);
+}
+
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+        color: #159656 !important;
+    }
+
+    .nav-tabs .nav-link {
+        padding: 4px;
+        border: 3px solid transparent !important;
+        margin-right: 31px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #203A53
+    }

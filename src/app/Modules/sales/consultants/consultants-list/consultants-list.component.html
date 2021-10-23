@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div class="card mb-4" style="min-height: 600px;">
+        <div class="card-body">
+            <div class="d-flex justify-content-between mb-3 mt-3 align-items-center ">
+                <div class="w-50 mr-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control mr-2 rounded" [(ngModel)]="SearchString" placeholder="Search consultant"
+                            aria-label="Search consultant " aria-describedby="basic-addon2">
+                            <div class="input-group-append ">
+                            <span [hidden]="!SearchString" (click)="SearchString='';onrefresh();"
+                            class="input-group-text bg-white pointer-hand">
+                            <i class="fa fa-times-circle"></i>
+                        </span></div>
+                        <a class="input-group-text btn btn-success" (click)="onrefresh()"  id="basic-addon2">Search
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="input-group">
+                        <button class="btn btn-outline-success" type="button" [routerLink]="['/home/sales/consultants/addconsultant']"
+                            aria-expanded="false">Add Consultant <i class="fa fa-user-plus fa-lg ml-2" aria-hidden="true"></i> </button>
+                       
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- <div class="text-center p-5" *ngIf="refreshGrid">
+                    <span><i class="fa fa-spinner fa-pulse"></i> </span>
+                </div> -->
+                <div *ngIf="!refreshGrid">
+                        <p-table [loading]="loaders?.loadingConsultants" responsiveLayout="scroll" styleClass="p-datatable-striped" [lazy]="true" (onLazyLoad)="lazyLoadConsultants($event)" 
+                            [value]="consultantsList" [paginator]="true" [alwaysShowPaginator]="consultantsList?.length > 10"
+                            [pageLinks]="3" [rowsPerPageOptions]="[10,20,100]" [columns]="ConsultantColumnsList" [rows]="rows"
+                            [totalRecords]="totalRecords" [showCurrentPageReport]="true"
+                            currentPageReportTemplate="displaying {currentPage} of {totalPages} pages" [showLoader]="true"
+                            [(first)]="first">
+                            <ng-template pTemplate="header" let-columns>
+                                <tr>
+                                    <th [ngClass]="col.styleClass" [style.width.%]="col.width" class="pointer-hand"
+                                        *ngFor="let col of columns" [pSortableColumn]="col.field" title="{{col.header}}">
+                                        <div class="flex-fill">
+                                            <div  [ngClass]="col.dStyleClass">
+                                                <span class="mr-1 text-truncate">{{col.header}}</span>
+                                                <p-sortIcon [field]="col.field"></p-sortIcon>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th class="pointer-hand text-muted" >Actions</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-consultant let-columns="columns">
+                                <tr>
+                                    <td [ngClass]="col.styleClass" [style.width.px]="col.width"  *ngFor="let col of columns" title="{{consultant[col.field]}}" class="pointer-hand text-truncate">
+                                        <span class="d-inline-block text-truncate">
+                                            {{consultant[col.field]}}
+                                        </span>
+                                    </td>
+                                    <td style="width: 115px!important;" class="w-100 d-block actionButton"><i class="fa fa-paper-plane text-info fa-lg pointer-hand" (click)="confirmToHotlist()" title="Move To Hotlist" aria-hidden="true"></i>&nbsp;&nbsp;
+                                        <i class="fa fa-eye fa-lg  text-success pointer-hand" title="View Details" aria-hidden="true"></i>&nbsp;&nbsp;
+                                        <i class="fas fa-pencil-alt text-primary  fa-lg pointer-hand" title="Edit Consultant" aria-hidden="true"></i></td>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="emptymessage">
+                                <tr>
+                                    <td colspan="9" class="text-center">
+                                          No Records
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- [ngClass]="{'selected-row': (newCountryId == country?.CountryId) || (editCountryId == country?.CountryId)}" -->
